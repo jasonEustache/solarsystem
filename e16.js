@@ -9,14 +9,10 @@
  */
 
 export function find(array, callback) {
-  let newArray = [];
-
   for (let i = 0; i < array.length; i++) {
-    if (array[i].v === true) {
-      newArray.push(callback);
+    if (callback(array[i]) === true) {
+      return array[i];
     }
-
-    return newArray;
   }
 }
 
